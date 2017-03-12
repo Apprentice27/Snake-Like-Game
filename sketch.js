@@ -3,8 +3,6 @@ var score = 0;
 var food;
 function setup() {
   createCanvas(400, 400);
-
-  //background(0);
   food = new Food(200, 20);
 }
 
@@ -35,12 +33,10 @@ function draw() {
 
     while(x % 20 !== 0) {
       x++;
-      //console.log(x);
     };
 
     while(y % 20 !== 0) {
       y++;
-      //console.log(y);
     };
     food.x = x;
     food.y = y;
@@ -51,41 +47,22 @@ function draw() {
 }
 
 function keyPressed() {
-  if(keyCode === DOWN_ARROW) {
-    p1.y += 20;
-  } else if(keyCode === UP_ARROW) {
-    p1.y -= 20;
-  } else if(keyCode === RIGHT_ARROW) {
-    p1.x += 20;
-  } else if(keyCode === LEFT_ARROW) {
-    p1.x -= 20;
-  } else {
-    console.log('ERROR');
-  }
-
-}
-/**
-function Player() {
-  this.x = 20;
-  this.y = 20;
-  this.w = 20;
-  this.h = 20;
-  this.display = function() {
-    fill(255);
-    noStroke();
-    rect(this.x, this.y, this.w, this.h);
-  };
-}
-**/
-
-/**
-function Food(x, y) {
-  this.x = x;
-  this.y = y;
-  this.display = function() {
-    fill('red');
-    noStroke();
-    rect(this.x, this.y, 20, 20);
+  if(keyCode === (UP_ARROW)) {
+    if(p1.y !== 20) {
+      p1.y -= p1.speed;
+    }
+  } else if(keyCode === (DOWN_ARROW)) {
+    if(p1.y !== 320 - 20) {
+      p1.y += p1.speed;
+    }
+  } else if(keyCode === (LEFT_ARROW)) {
+    if(p1.x !== 20) {
+      p1.x -= p1.speed;
+    }
+  } else if(keyCode === (RIGHT_ARROW)) {
+    if(p1.x !== 380 - 20) {
+      p1.x += p1.speed;
+    }
   }
 }
-**/
+
