@@ -3,6 +3,7 @@ function Player() {
   this.y = 20;
   this.w = 20;
   this.h = 20;
+  this.speed = 20;
   this.display = function() {
     fill(255);
     noStroke();
